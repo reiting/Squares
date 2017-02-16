@@ -1,6 +1,10 @@
 # FS-SP17-Lab4
 # squares-lab
 
+##### Covalence
+
+###### Full Stack: Spring 2017
+
 ### Instructions
 
 There are several supporting frameworks to interact act with the [DOM] (https://en.wikipedia.org/wiki/Document_Object_Model). However, the same effects can be achieved in pure javascript. This project will be constructed without writing any additional HTML. With the HTML skeleton provided, create a simple webpage with a button at the top which adds squares to the page.
