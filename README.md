@@ -31,8 +31,8 @@ There are several supporting frameworks to interact act with the [DOM] (https://
 
 * When a square is double clicked:
 
-*If it is even, the element after the clicked square should be removed
+* If it is even, the element after the clicked square should be removed
 
-*If it is odd, the element before the clicked square should be removed
+* If it is odd, the element before the clicked square should be removed
 
-*If there is no element before or after when you need it, display an alert saying that the element does not exist
+* If there is no element before or after when you need it, display an alert saying that the element does not exist
