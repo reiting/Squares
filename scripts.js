@@ -34,8 +34,8 @@ function addSquare() {
     square.style.lineHeight = '50px';
 
     //increase counter everytime you addSquare
-    counter++;
     square.innerHTML = counter;
+      counter++;
 
     //assign counter as the id so number appears
     square.id = counter;
@@ -44,9 +44,26 @@ function addSquare() {
     square.addEventListener('click', getRandomColor);
     square.addEventListener('mouseover', displayNumber);
     square.addEventListener('mouseout', removeNumber);
-    square.addEventListener('dblclick', removeSquare);
+    square.addEventListener('dblclick', function removeSquare() {
+        if (counter % 2 == 0) {
+            var next = square.nextSibling;
+            if (next == null) {
+                alert("Not an element");
+            } else {
+                square.nextSibling.remove();
+            }
+    } else {
+            var prev = square.previousSibling;
+            if (prev == null) {
+                alert("Not an element");
+            } else {
+                square.previousSibling.remove();
+            }
+    }
+});
+
     // event listener for doubleclick to run function for alert
-    square.addEventListener('dblclick', messageMe);
+    // square.addEventListener('dblclick', messageMe);
     //put the square on the page
     document.body.appendChild(square);
 
@@ -71,24 +88,22 @@ function addSquare() {
         square.style.color = 'transparent';
     }
 
-    function removeSquare() {
-        if (counter % 2 == 1) {
-            square.previousElementSibling.remove();
-        }
-        // if (square.previousElementSibling == btn)
-        //     null;
+    
 
-        else {
-            square.nextElementSibling.remove();
-        }
 
-    }
-
-    function messageMe() {
-        if (square.nextElementSibling == undefined)
-            alert('This element does not exist');
-        if (square.previousElementSibling == undefined)
-            alert('This element does not exist');
-    }
+    // function messageMe() {
+    //     if (square.nextSibling == undefined)
+    //         alert('This element does not exist');
+    //     if (square.previousSibling == undefined)
+    //         alert('This element does not exist');
+    // }
 
 };
+
+
+
+
+
+
+
+    
