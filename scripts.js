@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 //create button
 var btn = document.createElement("button");
 //create text on button
@@ -23,6 +24,7 @@ function addSquare() {
     var square = document.createElement('div');
     //give square a class
     square.className = "allSquares";
+    square.id = counter;
 
     //style square
     square.style.backgroundColor = 'black';
@@ -38,26 +40,26 @@ function addSquare() {
       counter++;
 
     //assign counter as the id so number appears
-    square.id = counter;
+    
 
     //event listeners for every square
     square.addEventListener('click', getRandomColor);
     square.addEventListener('mouseover', displayNumber);
     square.addEventListener('mouseout', removeNumber);
-    square.addEventListener('dblclick', function removeSquare() {
-        if (counter % 2 == 0) {
+    square.addEventListener('dblclick', function () {
+        if (square.id % 2 == 0) {
             var next = square.nextSibling;
-            if (next == null) {
+            if (next == null || next.tagName.toLowerCase() !== 'div') {
                 alert("Not an element");
             } else {
-                square.nextSibling.remove();
+                next.remove();
             }
     } else {
             var prev = square.previousSibling;
             if (prev == null) {
                 alert("Not an element");
             } else {
-                square.previousSibling.remove();
+                prev.remove();
             }
     }
 });
@@ -98,9 +100,9 @@ function addSquare() {
     //         alert('This element does not exist');
     // }
 
-};
+}
 
-
+});
 
 
 
